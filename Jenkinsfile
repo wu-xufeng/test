@@ -4,32 +4,17 @@ pipeline {
     environment{
         ONES_PIPELINE_URL="https://api.ones.ai/project/v1/team/EfJdQBt5/pipeline/9FnBc27s/callback?token=Af6bKjiZz3MAHBskQRderB"
     }
+    
     stages {
-        stage('Build') {
-            parallel{
-                stage('Build:Module1') { 
-                    steps { 
-                        echo 'echo Build Module1 stage ...' 
-                    }
-                }
-                stage('Build:Module2') { 
-                    steps { 
-                        echo 'echo Build Module2 stage ...' 
-                    }
-                }
-                stage('Build:Module3') { 
-                    steps { 
-                        echo 'echo Build Module3 stage ...' 
-                    }
-                }
-            }
-        }
+        
         stage('Deploy') {
             steps {
-                echo 'echo Deploy stage ...'
+                
                 script{
-                    onespl start
-                    onespl lint --lang
+                    sh 'onespl start'
+                    echo 'echo Deploy stage ...'
+                    sh 'onespl lint --lang java'
+                    sh 'onespl artifact https://ones.ai'
                 }
             }
         }
