@@ -50,8 +50,8 @@ pipeline {
                 // sh 'echo "${currentBuild.result}"'
                 sh 'echo "${currentBuild}".result'
                 def a=currentBuild.result
-                sh 'echo $a'
-                
+                // sh 'echo $a'
+                echo a
                 
                 def workspace = new File("${WORKSPACE}")
                 command.execute(env, workspace).waitFor()
