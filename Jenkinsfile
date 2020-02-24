@@ -32,7 +32,7 @@ pipeline {
                     def a='WORKSPACE="'+"${WORKSPACE}"+'"'
                 echo 'test start'
                 echo a
-                echo 'WORKSPACE="'+${WORKSPACE}+'"'
+                echo 'WORKSPACE="'+"${WORKSPACE}"+'"'
                 echo 'test end'
                     env.add('WORKSPACE="${WORKSPACE}"')
                     env.add('BUILD_ID="${}"')
