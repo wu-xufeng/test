@@ -30,7 +30,7 @@ pipeline {
                 // env.add("BUILD_RESULT=" + manager.getResult())
                     def env=[]
                     env.add('WORKSPACE="${WORKSPACE}"')
-                    env.add('BUILD_ID="${BUILD_ID}"')
+                    env.add('BUILD_ID="${}"')
                     env.add('BUILD_URL="${BUILD_URL}"')
                     env.add('JOB_NAME="${JOB_NAME}"')
                     env.add('GIT_BRANCH="${GIT_BRANCH}"')
@@ -39,6 +39,15 @@ pipeline {
                     env.add('BUILD_NUMBER="${BUILD_NUMBER}"')
                     env.add('BUILD_RESULT="${BUILD_STATUS}"')
                 sh 'echo "${BUILD_STATUS}"'
+                sh 'echo "${WORKSPACE}"'
+                sh 'echo "${BUILD_ID}"'
+                sh 'echo "${JOB_NAME}"'
+                sh 'echo "${GIT_BRANCH}"'
+                sh 'echo "${GIT_COMMIT}"'
+                sh 'echo "${GIT_PREVIOUS_COMMIT}"'
+                sh 'echo "${BUILD_NUMBER}"'
+                
+                
                 def workspace = new File("${WORKSPACE}")
                 command.execute(env, workspace).waitFor()
             }
