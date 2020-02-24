@@ -38,7 +38,7 @@ pipeline {
                     env.add('GIT_PREVIOUS_COMMIT="${GIT_PREVIOUS_COMMIT}"')
                     env.add('BUILD_NUMBER="${BUILD_NUMBER}"')
                     env.add('BUILD_RESULT="${BUILD_STATUS}"')
-
+                sh 'echo "${BUILD_STATUS}"'
                 def workspace = new File("${WORKSPACE}")
                 command.execute(env, workspace).waitFor()
             }
