@@ -40,7 +40,7 @@ pipeline {
                     
 
                     def BUILD_RESUT=currentBuild.result
-                        env.add('BUILD_RESULT="${BUILD_RESUT}"')
+                        env.add('BUILD_RESULT=$BUILD_RESUT')
                    sh 'echo "${BUILD_RESULT}"'
                    // env.add('BUILD_RESULT')
                 
