@@ -29,6 +29,11 @@ pipeline {
                 // def env = manager.envVars.collect { k, v -> "$k=$v" }
                 // env.add("BUILD_RESULT=" + manager.getResult())
                     def env=[]
+                    def a='WORKSPACE="'+${WORKSPACE}+'"'
+                echo 'test start'
+                echo a
+                echo 'WORKSPACE="'+${WORKSPACE}+'"'
+                echo 'test end'
                     env.add('WORKSPACE="${WORKSPACE}"')
                     env.add('BUILD_ID="${}"')
                     env.add('BUILD_URL="${BUILD_URL}"')
