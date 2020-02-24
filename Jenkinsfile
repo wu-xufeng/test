@@ -47,7 +47,7 @@ pipeline {
                 sh 'echo "${GIT_PREVIOUS_COMMIT}"'
                 sh 'echo "${BUILD_NUMBER}"'
                 sh 'echo "${CurrentBuild}"'
-                sh 'echo currentBuild.result'
+                sh 'echo $currentBuild.result'
                 
                 
                 def workspace = new File("${WORKSPACE}")
