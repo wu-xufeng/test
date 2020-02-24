@@ -35,16 +35,16 @@ pipeline {
                 echo 'WORKSPACE="'+"${WORKSPACE}"+'"'
                 echo 'WORKSPACE="${WORKSPACE}"'
                 echo 'test end'
-                    env.add('WORKSPACE="${WORKSPACE}"')
-                    env.add('BUILD_ID="${}"')
-                    env.add('BUILD_URL="${BUILD_URL}"')
-                    env.add('JOB_NAME="${JOB_NAME}"')
-                    env.add('GIT_BRANCH="${GIT_BRANCH}"')
-                    env.add('GIT_COMMIT="${GIT_COMMIT}"')
-                    env.add('GIT_PREVIOUS_COMMIT="${GIT_PREVIOUS_COMMIT}"')
-                    env.add('BUILD_NUMBER="${BUILD_NUMBER}"')
+                    env.add('WORKSPACE="'+"${WORKSPACE}"+'"')
+                    env.add('BUILD_ID="'+"${BUILD_ID}"+'"')
+                    env.add('BUILD_URL="'+"${BUILD_URL}"+'"')
+                    env.add('JOB_NAME="'+"${JOB_NAME}"+'"')
+                    env.add('GIT_BRANCH="'+"${GIT_BRANCH}"+'"')
+                    env.add('GIT_COMMIT="'+"${GIT_COMMIT}"+'"')
+                    env.add('GIT_PREVIOUS_COMMIT="'+"${GIT_PREVIOUS_COMMIT}"+'"')
+                    env.add('BUILD_NUMBER="'+"${BUILD_NUMBER}"+'"')
                     
-                    def BUILD_RESULT=currentBuild.result
+                    def BUILD_RESULT='"'+currentBuild.result+'"'
                     env.add('BUILD_RESULT='+BUILD_RESULT)
                     //    env.add('BUILD_RESULT=$BUILD_RESUT')
                    sh 'echo env'
