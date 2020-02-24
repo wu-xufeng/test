@@ -37,7 +37,7 @@ pipeline {
                     env.add('GIT_COMMIT="${GIT_COMMIT}"')
                     env.add('GIT_PREVIOUS_COMMIT="${GIT_PREVIOUS_COMMIT}"')
                     env.add('BUILD_NUMBER="${BUILD_NUMBER}"')
-                    env.add('BUILD_RESULT="${currentBuild.result}"')
+                    env.add('BUILD_RESULT="${$(currentBuild.result)}"')
                     
 
                   // def BUILD_RESULT=currentBuild.result
