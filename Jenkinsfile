@@ -29,7 +29,7 @@ pipeline {
                 // def env = manager.envVars.collect { k, v -> "$k=$v" }
                 // env.add("BUILD_RESULT=" + manager.getResult())
                     def env=[]
-                    def a='WORKSPACE="'+${WORKSPACE}+'"'
+                    def a='WORKSPACE="'+"${WORKSPACE}"+'"'
                 echo 'test start'
                 echo a
                 echo 'WORKSPACE="'+${WORKSPACE}+'"'
@@ -47,7 +47,7 @@ pipeline {
                     env.add('BUILD_RESULT='+BUILD_RESULT)
                     //    env.add('BUILD_RESULT=$BUILD_RESUT')
                    sh 'echo env'
-                   echo env
+                   //echo env
                    // env.add('BUILD_RESULT')
                 
                 def workspace = new File("${WORKSPACE}")
