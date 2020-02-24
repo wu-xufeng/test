@@ -41,8 +41,8 @@ pipeline {
                     
 
                    def BUILD_RESULT=currentBuild.result
-                   echo $BUILD_RESULT
-                   env.add('BUILD_RESULT')
+                   // echo $BUILD_RESULT
+                   // env.add('BUILD_RESULT')
                 
                 def workspace = new File("${WORKSPACE}")
                 command.execute(env, workspace).waitFor()
