@@ -27,7 +27,7 @@ pipeline {
                 // def man = manager
                 // def env = manager.envVars.collect { k, v -> "$k=$v" }
                 // env.add("BUILD_RESULT=" + manager.getResult())
-                    def env=[]
+                 
                     def env=[]
                     env.add('WORKSPACE="'+"${WORKSPACE}"+'"')
                     env.add('BUILD_ID="'+"${BUILD_ID}"+'"')
